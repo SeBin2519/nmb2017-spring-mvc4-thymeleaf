@@ -14,11 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller 
-public class HelloController {
-	 
-	 @RequestMapping("/")
-	 public String hello() {
-		   return "resultPage";
+public class HelloController { 
+	@RequestMapping("/")
+	 public String hello(Model model) {
+	  model.addAttribute("message", "Hello from the controller"); 
+	  return "resultPage";
 	 }
-	 
 }
